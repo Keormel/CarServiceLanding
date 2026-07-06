@@ -6,7 +6,7 @@ export const locales = [
 
 export type Locale = (typeof locales)[number]["code"];
 
-export const defaultLocale: Locale = "ro";
+export const defaultLocale: Locale = "ru";
 
 export const dictionaries = {
   ro: {
