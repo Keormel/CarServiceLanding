@@ -4,35 +4,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/components/UI/LanguageProvider";
 import Reveal from "@/components/UI/Reveal";
 import SectionHeading from "@/components/UI/SectionHeading";
 
-const reviews = [
-  {
-    name: "Andrei Ceban",
-    car: "Audi A6",
-    photo:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=80",
-    text: "Am venit cu vibrații și o eroare la motor. Într-o oră au găsit cauza, mi-au arătat video de la endoscop și am confirmat reparația fără presiune."
-  },
-  {
-    name: "Elena Rusu",
-    car: "Mercedes-Benz GLC",
-    photo:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80",
-    text: "Service foarte curat și comunicare clară. Mi-au explicat costul, termenii și variantele de piese din timp. După reparație am primit și raport foto."
-  },
-  {
-    name: "Victor Munteanu",
-    car: "Toyota Camry",
-    photo:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=240&q=80",
-    text: "Am făcut suspensia și frânele. Fără lucrări inutile, piesele vechi au fost arătate. După o săptămână m-au sunat să verifice dacă totul e în regulă."
-  }
+const reviewPhotos = [
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=80",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80",
+  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=240&q=80"
 ];
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
+  const { dictionary } = useLanguage();
+  const testimonials = dictionary.testimonials;
+  const reviews = testimonials.items;
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -49,9 +35,9 @@ export default function Testimonials() {
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="Recenzii"
-            title="Clienții ne recomandă după prima vizită"
-            text="Oamenii apreciază diagnosticul precis, lucrările curate și faptul că nu ascundem procesul de reparație."
+            eyebrow={testimonials.eyebrow}
+            title={testimonials.title}
+            text={testimonials.text}
             align="center"
           />
         </Reveal>
@@ -65,7 +51,7 @@ export default function Testimonials() {
               <div className="flex gap-2">
                 <button
                   type="button"
-                  aria-label="Recenzia precedentă"
+                  aria-label={testimonials.previous}
                   onClick={() =>
                     setActive((current) =>
                       current === 0 ? reviews.length - 1 : current - 1
@@ -77,7 +63,7 @@ export default function Testimonials() {
                 </button>
                 <button
                   type="button"
-                  aria-label="Recenzia următoare"
+                  aria-label={testimonials.next}
                   onClick={() => setActive((current) => (current + 1) % reviews.length)}
                   className="focus-ring grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/5 text-white transition hover:border-signal hover:bg-signal"
                 >
@@ -98,8 +84,8 @@ export default function Testimonials() {
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
                   <div className="relative h-20 w-20 overflow-hidden rounded-lg border border-white/10 bg-white/5">
                     <Image
-                      src={currentReview.photo}
-                      alt={`Fotografia clientului ${currentReview.name}`}
+                      src={reviewPhotos[active]}
+                      alt={`${testimonials.photoAlt} ${currentReview.name}`}
                       fill
                       sizes="80px"
                       className="object-cover"
@@ -112,7 +98,7 @@ export default function Testimonials() {
                     <p className="mt-1 text-sm font-semibold text-white/[0.52]">
                       {currentReview.car}
                     </p>
-                    <div className="mt-3 flex gap-1 text-amber-300" aria-label="5 din 5">
+                    <div className="mt-3 flex gap-1 text-amber-300" aria-label={testimonials.ratingLabel}>
                       {Array.from({ length: 5 }).map((_, index) => (
                         <Star
                           key={index}
@@ -134,7 +120,7 @@ export default function Testimonials() {
                 <button
                   key={review.name}
                   type="button"
-                  aria-label={`Afișează recenzia ${index + 1}`}
+                  aria-label={`${testimonials.showReview} ${index + 1}`}
                   onClick={() => setActive(index)}
                   className={`h-2 rounded-full transition ${
                     index === active ? "w-8 bg-signal" : "w-2 bg-white/[0.22]"

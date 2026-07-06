@@ -9,64 +9,38 @@ import {
   Wrench
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { useLanguage } from "@/components/UI/LanguageProvider";
 import Reveal from "@/components/UI/Reveal";
 import SectionHeading from "@/components/UI/SectionHeading";
 
-interface Advantage {
-  icon: LucideIcon;
-  title: string;
-  text: string;
-}
-
-const advantages: Advantage[] = [
-  {
-    icon: Award,
-    title: "Peste 10 ani experiență",
-    text: "Lucrăm cu mărci germane, japoneze, coreene și premium."
-  },
-  {
-    icon: BadgeCheck,
-    title: "Mecanici certificați",
-    text: "Echipa se instruiește constant pe sisteme și proceduri moderne."
-  },
-  {
-    icon: Wrench,
-    title: "Echipamente moderne",
-    text: "Scannere profesionale, elevatoare, standuri și instrumente specializate."
-  },
-  {
-    icon: PackageCheck,
-    title: "Piese originale",
-    text: "Selectăm OEM, original sau analog verificat în funcție de buget."
-  },
-  {
-    icon: ShieldCheck,
-    title: "Garanție la lucrări",
-    text: "Garanție scrisă până la 24 de luni, cu condiții clare."
-  },
-  {
-    icon: CircleDollarSign,
-    title: "Prețuri corecte",
-    text: "Fără servicii impuse: doar lucrări care influențează siguranța și resursa."
-  }
+const advantageIcons: LucideIcon[] = [
+  Award,
+  BadgeCheck,
+  Wrench,
+  PackageCheck,
+  ShieldCheck,
+  CircleDollarSign
 ];
 
 export default function WhyUs() {
+  const { dictionary } = useLanguage();
+  const whyUs = dictionary.whyUs;
+
   return (
     <section className="section-pad border-y border-white/10 bg-graphite/[0.45]">
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="De ce ne aleg"
-            title="Service fără surprize în deviz sau calitate"
-            text="Explicăm problema pe înțelesul tău, arătăm piesele uzate și păstrăm istoricul de service al automobilului."
+            eyebrow={whyUs.eyebrow}
+            title={whyUs.title}
+            text={whyUs.text}
             align="center"
           />
         </Reveal>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {advantages.map((item, index) => {
-            const Icon = item.icon;
+          {whyUs.items.map((item, index) => {
+            const Icon = advantageIcons[index];
             return (
               <Reveal key={item.title} delay={index * 0.04}>
                 <article className="h-full rounded-lg border border-white/10 bg-carbon/70 p-6 transition duration-300 hover:border-signal/60 hover:bg-carbon">

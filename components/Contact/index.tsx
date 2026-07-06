@@ -10,36 +10,10 @@ import {
   Youtube
 } from "lucide-react";
 import BookingForm from "@/components/UI/BookingForm";
+import { useLanguage } from "@/components/UI/LanguageProvider";
 import Reveal from "@/components/UI/Reveal";
 import SectionHeading from "@/components/UI/SectionHeading";
 import { siteConfig } from "@/lib/site";
-
-const contacts = [
-  {
-    icon: MapPin,
-    label: "Adresă",
-    value: siteConfig.address,
-    href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.mapQuery)}`
-  },
-  {
-    icon: Phone,
-    label: "Telefon",
-    value: siteConfig.phone,
-    href: siteConfig.phoneHref
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: siteConfig.email,
-    href: `mailto:${siteConfig.email}`
-  },
-  {
-    icon: Clock,
-    label: "Program",
-    value: siteConfig.workingHours,
-    href: null
-  }
-];
 
 const socialLinks = [
   { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
@@ -48,18 +22,46 @@ const socialLinks = [
 ];
 
 export default function Contact() {
+  const { dictionary } = useLanguage();
+  const contact = dictionary.contact;
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
     siteConfig.mapQuery
   )}&output=embed`;
+  const contacts = [
+    {
+      icon: MapPin,
+      label: contact.labels.address,
+      value: siteConfig.address,
+      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.mapQuery)}`
+    },
+    {
+      icon: Phone,
+      label: contact.labels.phone,
+      value: siteConfig.phone,
+      href: siteConfig.phoneHref
+    },
+    {
+      icon: Mail,
+      label: contact.labels.email,
+      value: siteConfig.email,
+      href: `mailto:${siteConfig.email}`
+    },
+    {
+      icon: Clock,
+      label: contact.labels.hours,
+      value: siteConfig.workingHours,
+      href: null
+    }
+  ];
 
   return (
     <section id="contact" className="section-pad scroll-mt-20 bg-carbon">
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="Contacte"
-            title="Vino la diagnosticare sau lasă o solicitare online"
-            text="Suntem în Chișinău, cu acces comod pentru șoferii din oraș și suburbii. Pentru întreținere planificată recomandăm programarea în avans."
+            eyebrow={contact.eyebrow}
+            title={contact.title}
+            text={contact.text}
           />
         </Reveal>
 
@@ -123,7 +125,7 @@ export default function Contact() {
 
               <div className="overflow-hidden rounded-lg border border-white/10 bg-graphite">
                 <iframe
-                  title="Aleks-Blitz pe hartă"
+                  title={contact.mapTitle}
                   src={mapSrc}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

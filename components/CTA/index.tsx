@@ -4,14 +4,18 @@ import Image from "next/image";
 import { CalendarCheck, Phone } from "lucide-react";
 import Reveal from "@/components/UI/Reveal";
 import { ButtonLink } from "@/components/UI/Button";
+import { useLanguage } from "@/components/UI/LanguageProvider";
 import { siteConfig } from "@/lib/site";
 
 export default function CTA() {
+  const { dictionary } = useLanguage();
+  const cta = dictionary.cta;
+
   return (
     <section className="relative isolate overflow-hidden border-b border-white/10 py-16 sm:py-20">
       <Image
         src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=2200&q=84"
-        alt="Automobil după întreținere într-un service premium"
+        alt={cta.imageAlt}
         fill
         sizes="100vw"
         className="absolute inset-0 -z-20 object-cover"
@@ -21,13 +25,12 @@ export default function CTA() {
       <div className="container-px">
         <Reveal>
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase text-signal">Te putem ajuta azi</p>
+            <p className="text-sm font-bold uppercase text-signal">{cta.eyebrow}</p>
             <h2 className="mt-3 text-balance text-3xl font-black text-white sm:text-4xl lg:text-5xl">
-              Programează reparația chiar astăzi
+              {cta.title}
             </h2>
             <p className="mt-5 text-lg leading-8 text-white/[0.72]">
-              Lasă o solicitare sau sună. Alegem o fereastră comodă, pregătim
-              mecanicul și începem cu diagnosticare sinceră, fără lucrări inutile.
+              {cta.text}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink
@@ -36,7 +39,7 @@ export default function CTA() {
                 className="w-full sm:w-auto"
                 icon={<Phone className="h-5 w-5" aria-hidden="true" />}
               >
-                Sună
+                {cta.call}
               </ButtonLink>
               <ButtonLink
                 href="#booking"
@@ -45,7 +48,7 @@ export default function CTA() {
                 className="w-full sm:w-auto"
                 icon={<CalendarCheck className="h-5 w-5" aria-hidden="true" />}
               >
-                Lasă solicitare
+                {cta.request}
               </ButtonLink>
             </div>
           </div>

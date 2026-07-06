@@ -2,47 +2,24 @@
 
 import { CalendarCheck, ClipboardCheck, FileText, KeyRound } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { useLanguage } from "@/components/UI/LanguageProvider";
 import Reveal from "@/components/UI/Reveal";
 import SectionHeading from "@/components/UI/SectionHeading";
 
-interface ProcessStep {
-  icon: LucideIcon;
-  title: string;
-  text: string;
-}
-
-const steps: ProcessStep[] = [
-  {
-    icon: CalendarCheck,
-    title: "Trimite solicitarea",
-    text: "Alege ora potrivită, serviciul și descrie ce se întâmplă cu mașina."
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Diagnosticarea automobilului",
-    text: "Verificăm sistemele, prezentăm datele și separăm urgentul de planificat."
-  },
-  {
-    icon: FileText,
-    title: "Confirmarea costului",
-    text: "Fixăm devizul, termenii, lista pieselor și începem doar după acordul tău."
-  },
-  {
-    icon: KeyRound,
-    title: "Reparație și predare",
-    text: "Facem verificarea finală, oferim recomandări și documentele de garanție."
-  }
-];
+const stepIcons: LucideIcon[] = [CalendarCheck, ClipboardCheck, FileText, KeyRound];
 
 export default function Process() {
+  const { dictionary } = useLanguage();
+  const process = dictionary.process;
+
   return (
     <section id="process" className="section-pad scroll-mt-20 bg-carbon">
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="Cum lucrăm"
-            title="Proces clar, cu control la fiecare etapă"
-            text="Vezi exact pentru ce plătești și iei decizii pe baza diagnosticului, nu a presupunerilor."
+            eyebrow={process.eyebrow}
+            title={process.title}
+            text={process.text}
           />
         </Reveal>
 
@@ -50,8 +27,8 @@ export default function Process() {
           <div className="absolute left-0 right-0 top-8 hidden h-px bg-white/[0.12] lg:block" />
           <div className="absolute left-0 right-0 top-8 hidden h-px bg-metal-line lg:block" />
 
-          {steps.map((step, index) => {
-            const Icon = step.icon;
+          {process.items.map((step, index) => {
+            const Icon = stepIcons[index];
             return (
               <Reveal key={step.title} delay={index * 0.06}>
                 <article className="relative h-full rounded-lg border border-white/10 bg-graphite/70 p-6 backdrop-blur-xl transition duration-300 hover:border-signal/60">

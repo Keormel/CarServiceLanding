@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import LanguageProvider from "@/components/UI/LanguageProvider";
 import Process from "@/components/Process";
 import ScrollToTop from "@/components/UI/ScrollToTop";
 import Services from "@/components/Services";
@@ -69,21 +70,23 @@ export default function Home() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <WhyUs />
-        <Process />
-        <Gallery />
-        <Testimonials />
-        <FAQ />
-        <CTA />
-        <Contact />
-      </main>
-      <Footer />
-      <FloatingActions />
-      <ScrollToTop />
+      <LanguageProvider>
+        <Header />
+        <main>
+          <Hero />
+          <Services />
+          <WhyUs />
+          <Process />
+          <Gallery />
+          <Testimonials />
+          <FAQ />
+          <CTA />
+          <Contact />
+        </main>
+        <Footer />
+        <FloatingActions />
+        <ScrollToTop />
+      </LanguageProvider>
     </>
   );
 }

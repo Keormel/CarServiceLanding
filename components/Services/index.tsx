@@ -12,81 +12,39 @@ import {
   Wrench
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { useLanguage } from "@/components/UI/LanguageProvider";
 import SectionHeading from "@/components/UI/SectionHeading";
 import Reveal from "@/components/UI/Reveal";
 
-interface Service {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-}
-
-const services: Service[] = [
-  {
-    icon: ScanLine,
-    title: "Diagnosticare",
-    description:
-      "Verificare computerizată, inspecție mecanică și raport clar cu priorități."
-  },
-  {
-    icon: Droplets,
-    title: "Schimb ulei",
-    description:
-      "Ulei conform specificației, filtre premium și resetarea intervalelor de service."
-  },
-  {
-    icon: Disc3,
-    title: "Sistem de frânare",
-    description:
-      "Plăcuțe, discuri, etriere, lichid de frână și test de eficiență."
-  },
-  {
-    icon: Wrench,
-    title: "Suspensie",
-    description:
-      "Diagnosticarea zgomotelor, înlocuire brațe, amortizoare, bucșe și bielete."
-  },
-  {
-    icon: Cable,
-    title: "Electrică auto",
-    description:
-      "Consum parazitar, erori module, senzori, cablaj și electronică auto complexă."
-  },
-  {
-    icon: Gauge,
-    title: "Motor",
-    description:
-      "De la mentenanță preventivă până la reparații majore cu test compresie."
-  },
-  {
-    icon: Settings,
-    title: "Cutie de viteze",
-    description:
-      "Service pentru automată, DSG, CVT, adaptări și eliminarea smuciturilor."
-  },
-  {
-    icon: Car,
-    title: "Anvelope",
-    description:
-      "Schimb sezonier, echilibrare, reparare pene și depozitare roți."
-  }
+const serviceIcons: LucideIcon[] = [
+  ScanLine,
+  Droplets,
+  Disc3,
+  Wrench,
+  Cable,
+  Gauge,
+  Settings,
+  Car
 ];
 
 export default function Services() {
+  const { dictionary } = useLanguage();
+  const services = dictionary.services;
+
   return (
     <section id="services" className="section-pad scroll-mt-20 bg-carbon">
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="Serviciile noastre"
-            title="Acoperim întregul ciclu de întreținere auto"
-            text="De la diagnosticare precisă până la reparații complexe. Fiecare lucrare este documentată, iar devizul este confirmat înainte de start."
+            eyebrow={services.eyebrow}
+            title={services.title}
+            text={services.text}
           />
         </Reveal>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, index) => {
-            const Icon = service.icon;
+          {services.items.map((service, index) => {
+            const Icon = serviceIcons[index];
             return (
               <Reveal key={service.title} delay={index * 0.035}>
                 <article className="group h-full rounded-lg border border-white/10 bg-graphite/[0.64] p-5 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-signal/60 hover:bg-graphite">
@@ -100,9 +58,9 @@ export default function Services() {
                   <a
                     href="#booking"
                     className="focus-ring mt-5 inline-flex items-center gap-2 rounded-lg py-2 text-sm font-bold text-white transition hover:text-signal"
-                    aria-label={`Detalii: ${service.title}`}
+                    aria-label={`${services.detailsAria}: ${service.title}`}
                   >
-                    Detalii
+                    {services.details}
                     <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </article>

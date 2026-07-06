@@ -4,13 +4,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { ButtonLink } from "@/components/UI/Button";
+import LanguageSwitcher from "@/components/UI/LanguageSwitcher";
 import Logo from "@/components/UI/Logo";
-import { navLinks, siteConfig } from "@/lib/site";
+import { useLanguage } from "@/components/UI/LanguageProvider";
+import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { dictionary } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -36,12 +39,12 @@ export default function Header() {
       )}
     >
       <div className="container-px flex h-16 items-center justify-between gap-5 md:h-20">
-        <a href="#top" aria-label="Aleks-Blitz pagina principală" className="focus-ring rounded-lg">
+        <a href="#top" aria-label={dictionary.header.homeLabel} className="focus-ring rounded-lg">
           <Logo />
         </a>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Meniu principal">
-          {navLinks.map((item) => (
+        <nav className="hidden items-center gap-1 lg:flex" aria-label={dictionary.header.menuLabel}>
+          {dictionary.nav.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -57,23 +60,24 @@ export default function Header() {
             href="#booking"
             variant="secondary"
             size="sm"
-            aria-label="Programează-te la service"
+            aria-label={dictionary.header.bookAria}
           >
-            Programare
+            {dictionary.header.book}
           </ButtonLink>
           <ButtonLink
             href={siteConfig.phoneHref}
             size="sm"
             icon={<Phone className="h-4 w-4" aria-hidden="true" />}
-            aria-label={`Sună la ${siteConfig.phone}`}
+            aria-label={`${dictionary.header.callAria} ${siteConfig.phone}`}
           >
-            Sună
+            {dictionary.header.call}
           </ButtonLink>
+          <LanguageSwitcher />
         </div>
 
         <button
           type="button"
-          aria-label={open ? "Închide meniul" : "Deschide meniul"}
+          aria-label={open ? dictionary.header.closeMenu : dictionary.header.openMenu}
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((value) => !value)}
@@ -97,8 +101,8 @@ export default function Header() {
             transition={{ duration: 0.22 }}
             className="border-t border-white/10 bg-carbon/[0.96] px-4 pb-5 pt-4 shadow-panel backdrop-blur-xl lg:hidden"
           >
-            <nav className="mx-auto flex max-w-7xl flex-col gap-1" aria-label="Meniu mobil">
-              {navLinks.map((item) => (
+            <nav className="mx-auto flex max-w-7xl flex-col gap-1" aria-label={dictionary.header.mobileMenuLabel}>
+              {dictionary.nav.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -108,16 +112,17 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
+              <LanguageSwitcher className="mt-4 w-full justify-center" />
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 <ButtonLink href="#booking" onClick={() => setOpen(false)}>
-                  Programare
+                  {dictionary.header.book}
                 </ButtonLink>
                 <ButtonLink
                   href={siteConfig.phoneHref}
                   variant="secondary"
                   icon={<Phone className="h-4 w-4" aria-hidden="true" />}
                 >
-                  Sună
+                  {dictionary.header.call}
                 </ButtonLink>
               </div>
             </nav>

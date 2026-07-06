@@ -3,55 +3,15 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/components/UI/LanguageProvider";
 import Reveal from "@/components/UI/Reveal";
 import SectionHeading from "@/components/UI/SectionHeading";
 import { cn } from "@/lib/utils";
 
-const questions = [
-  {
-    question: "Cât durează diagnosticarea automobilului?",
-    answer:
-      "Diagnosticarea de bază durează de obicei 40-60 de minute. Dacă este necesară o verificare profundă a motorului, electricii sau cutiei, confirmăm timpul și costul înainte."
-  },
-  {
-    question: "Pot veni cu piesele mele?",
-    answer:
-      "Da, însă garanția piesei rămâne la furnizor. Garanția pentru lucrarea noastră se păstrează dacă piesa corespunde specificației și nu are defecte vizibile."
-  },
-  {
-    question: "Confirmați prețul înainte de reparație?",
-    answer:
-      "Da. După diagnosticare primești devizul cu lucrări, piese și termeni. Începem doar după confirmarea ta."
-  },
-  {
-    question: "Oferiți garanție pentru reparații?",
-    answer:
-      "Da, garanția pentru lucrări și piesele montate este de până la 24 de luni. Condițiile sunt indicate în actele de service."
-  },
-  {
-    question: "Lucrați cu mărci premium?",
-    answer:
-      "Da. Deservim BMW, Mercedes-Benz, Audi, Lexus, Porsche, Volvo și alte mărci, inclusiv automobile cu electronică modernă."
-  },
-  {
-    question: "Pot lăsa automobilul pentru o zi?",
-    answer:
-      "Da. Automobilul rămâne într-o zonă de service închisă. Când este gata, te anunțăm și stabilim ora de predare."
-  },
-  {
-    question: "Faceți reparații urgente?",
-    answer:
-      "Dacă avem fereastră liberă și piesele necesare, putem prelua lucrări urgente în aceeași zi. Cel mai bine este să suni în avans."
-  },
-  {
-    question: "Cum înțeleg că reparația este într-adevăr necesară?",
-    answer:
-      "Îți arătăm rezultatele diagnosticului, foto sau video cu piesele uzate și explicăm riscurile. Tu alegi ce faci acum și ce poți planifica."
-  }
-];
-
 export default function FAQ() {
   const [open, setOpen] = useState(0);
+  const { dictionary } = useLanguage();
+  const faq = dictionary.faq;
 
   return (
     <section id="faq" className="section-pad scroll-mt-20 border-y border-white/10 bg-graphite/[0.45]">
@@ -59,14 +19,14 @@ export default function FAQ() {
         <Reveal>
           <SectionHeading
             eyebrow="FAQ"
-            title="Întrebări frecvente"
-            text="Am adunat răspunsurile care apar cel mai des înainte de prima vizită la service."
+            title={faq.title}
+            text={faq.text}
             align="center"
           />
         </Reveal>
 
         <div className="mx-auto max-w-4xl space-y-3">
-          {questions.map((item, index) => {
+          {faq.items.map((item, index) => {
             const isOpen = open === index;
             const panelId = `faq-panel-${index}`;
             return (

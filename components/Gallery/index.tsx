@@ -1,57 +1,37 @@
 "use client";
 
+import { useLanguage } from "@/components/UI/LanguageProvider";
 import Reveal from "@/components/UI/Reveal";
 import SectionHeading from "@/components/UI/SectionHeading";
 import SkeletonImage from "@/components/UI/SkeletonImage";
 
-const photos = [
-  {
-    title: "Zona de diagnosticare",
-    alt: "Zonă curată pentru diagnosticarea automobilului",
-    src: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=82"
-  },
-  {
-    title: "Procesul de reparație",
-    alt: "Mecanic care repară un automobil",
-    src: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=82"
-  },
-  {
-    title: "Instrumente profesionale",
-    alt: "Set de instrumente într-un service auto",
-    src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=82"
-  },
-  {
-    title: "Automobile premium",
-    alt: "Automobil modern în zona de service",
-    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=82"
-  },
-  {
-    title: "Zona de service",
-    alt: "Elevator și echipamente pentru service auto",
-    src: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1200&q=82"
-  },
-  {
-    title: "Verificare finală",
-    alt: "Automobil după întreținere",
-    src: "https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1200&q=82"
-  }
+const photoSources = [
+  "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=82",
+  "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=82",
+  "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=82",
+  "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=82",
+  "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1200&q=82",
+  "https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1200&q=82"
 ];
 
 export default function Gallery() {
+  const { dictionary } = useLanguage();
+  const gallery = dictionary.gallery;
+
   return (
     <section id="gallery" className="section-pad scroll-mt-20 border-y border-white/10 bg-graphite/[0.45]">
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="Galerie"
-            title="Atelier curat, instrumente precise și mașini în mâini sigure"
-            text="Zonele de lucru sunt organizate pentru intervenții rapide și protecția automobilului."
+            eyebrow={gallery.eyebrow}
+            title={gallery.title}
+            text={gallery.text}
             align="center"
           />
         </Reveal>
 
         <div className="grid auto-rows-[260px] gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {photos.map((photo, index) => (
+          {gallery.photos.map((photo, index) => (
             <Reveal
               key={photo.title}
               delay={index * 0.035}
@@ -59,7 +39,7 @@ export default function Gallery() {
             >
               <figure className="group relative h-full overflow-hidden rounded-lg border border-white/10 bg-white/5">
                 <SkeletonImage
-                  src={photo.src}
+                  src={photoSources[index]}
                   alt={photo.alt}
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"

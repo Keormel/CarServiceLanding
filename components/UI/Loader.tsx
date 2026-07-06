@@ -1,4 +1,8 @@
+import { defaultLocale, dictionaries } from "@/lib/i18n";
+
 export default function Loader() {
+  const label = dictionaries[defaultLocale].ui.loader;
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-carbon text-white">
       <div className="flex flex-col items-center gap-5">
@@ -7,7 +11,7 @@ export default function Loader() {
           <div className="absolute inset-2 animate-spin rounded-lg border-2 border-transparent border-t-signal" />
           <div className="absolute inset-5 rounded bg-signal" />
         </div>
-        <p className="text-sm font-semibold text-white/70">Încărcăm service-ul</p>
+        <p className="text-sm font-semibold text-white/70">{label}</p>
       </div>
     </div>
   );
