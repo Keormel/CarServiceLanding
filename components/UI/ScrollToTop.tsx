@@ -22,7 +22,7 @@ export default function ScrollToTop() {
       aria-label={dictionary.ui.scrollTop}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       className={cn(
-        "focus-ring fixed bottom-24 right-4 z-40 grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/10 text-white shadow-panel backdrop-blur-xl transition duration-300 hover:border-signal hover:bg-signal sm:right-6",
+        "focus-ring fixed bottom-36 right-4 z-40 grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/10 text-white shadow-panel backdrop-blur-xl transition duration-300 hover:border-signal hover:bg-signal sm:right-6",
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       )}
     >

@@ -9,6 +9,6 @@ export const siteConfig = {
     "https://wa.me/37360123456?text=Salut%2C%20vreau%20o%20programare%20la%20Aleks-Blitz",
   email: "service@aleks-blitz.md",
   address: "Drochia, Str. Industriala 2",
-  workingHours: "Luni-Sâmbătă 09:00-20:00, Duminică 10:00-16:00",
+  workingHours: "09:00-19:00",
   mapQuery: "Drochia, Str. Industriala 2"
 };
