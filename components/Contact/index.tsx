@@ -17,13 +17,13 @@ import { siteConfig } from "@/lib/site";
 const contacts = [
   {
     icon: MapPin,
-    label: "Адрес",
+    label: "Adresă",
     value: siteConfig.address,
     href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.mapQuery)}`
   },
   {
     icon: Phone,
-    label: "Телефон",
+    label: "Telefon",
     value: siteConfig.phone,
     href: siteConfig.phoneHref
   },
@@ -35,7 +35,7 @@ const contacts = [
   },
   {
     icon: Clock,
-    label: "Часы работы",
+    label: "Program",
     value: siteConfig.workingHours,
     href: null
   }
@@ -57,14 +57,14 @@ export default function Contact() {
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="Контакты"
-            title="Приезжайте на диагностику или оставьте заявку онлайн"
-            text="Мы находимся рядом с удобным выездом на ТТК. Для планового обслуживания лучше записаться заранее."
+            eyebrow="Contacte"
+            title="Vino la diagnosticare sau lasă o solicitare online"
+            text="Suntem în Chișinău, cu acces comod pentru șoferii din oraș și suburbii. Pentru întreținere planificată recomandăm programarea în avans."
           />
         </Reveal>
 
         <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-          <Reveal>
+          <Reveal className="order-2 lg:order-1">
             <div className="space-y-6">
               <div className="glass-panel rounded-lg p-5 sm:p-6">
                 <div className="grid gap-3">
@@ -123,7 +123,7 @@ export default function Contact() {
 
               <div className="overflow-hidden rounded-lg border border-white/10 bg-graphite">
                 <iframe
-                  title="Apex Motors на карте"
+                  title="Aleks-Blitz pe hartă"
                   src={mapSrc}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -134,7 +134,7 @@ export default function Contact() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.08}>
+          <Reveal delay={0.08} className="order-1 lg:order-2">
             <BookingForm />
           </Reveal>
         </div>

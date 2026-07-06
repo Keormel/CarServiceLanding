@@ -1,24 +1,24 @@
-# Apex Motors Landing
+# Aleks-Blitz Landing
 
-Современный адаптивный landing page для премиального автосервиса.
+Landing page modern și adaptiv pentru service-ul auto premium Aleks-Blitz.
 
-## Стек
+## Stack
 
 - Next.js App Router
 - React + TypeScript
 - Tailwind CSS
 - Framer Motion
 - Lucide Icons
-- SEO metadata, Open Graph, JSON-LD, robots и sitemap
+- SEO metadata, Open Graph, JSON-LD, robots și sitemap
 
-## Запуск
+## Rulare
 
 ```bash
 npm install
 npm run dev
 ```
 
-Для production-сборки:
+Pentru build production:
 
 ```bash
 npm run build

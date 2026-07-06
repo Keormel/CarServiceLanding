@@ -17,7 +17,7 @@ export default function ScrollToTop() {
   return (
     <button
       type="button"
-      aria-label="Наверх"
+      aria-label="Sus"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       className={cn(
         "focus-ring fixed bottom-24 right-4 z-40 grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/10 text-white shadow-panel backdrop-blur-xl transition duration-300 hover:border-signal hover:bg-signal sm:right-6",

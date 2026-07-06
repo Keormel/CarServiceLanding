@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Apex Motors — премиальный автосервис";
+export const alt = "Aleks-Blitz — service auto premium";
 export const size = {
   width: 1200,
   height: 630
@@ -39,13 +39,13 @@ export default function Image() {
               fontWeight: 800
             }}
           >
-            AM
+            AB
           </div>
-          <div style={{ fontSize: 42, fontWeight: 800 }}>Apex Motors</div>
+          <div style={{ fontSize: 42, fontWeight: 800 }}>Aleks-Blitz</div>
         </div>
         <div>
           <div style={{ fontSize: 78, fontWeight: 900, maxWidth: 860 }}>
-            Премиальный автосервис в Москве
+            Service auto premium în Chișinău
           </div>
           <div
             style={{
@@ -55,7 +55,7 @@ export default function Image() {
               maxWidth: 760
             }}
           >
-            Диагностика, ремонт и обслуживание автомобилей с гарантией
+            Diagnosticare, reparații și întreținere auto cu garanție
           </div>
         </div>
       </div>

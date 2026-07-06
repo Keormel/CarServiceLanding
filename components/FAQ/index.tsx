@@ -9,44 +9,44 @@ import { cn } from "@/lib/utils";
 
 const questions = [
   {
-    question: "Сколько занимает диагностика автомобиля?",
+    question: "Cât durează diagnosticarea automobilului?",
     answer:
-      "Базовая диагностика обычно занимает 40-60 минут. Если нужна глубокая проверка двигателя, электрики или коробки, мастер заранее согласует время и стоимость."
+      "Diagnosticarea de bază durează de obicei 40-60 de minute. Dacă este necesară o verificare profundă a motorului, electricii sau cutiei, confirmăm timpul și costul înainte."
   },
   {
-    question: "Можно ли приехать со своими запчастями?",
+    question: "Pot veni cu piesele mele?",
     answer:
-      "Да, но гарантия на деталь остается на стороне поставщика. На нашу работу гарантия сохраняется, если запчасть подходит по спецификации и не имеет видимых дефектов."
+      "Da, însă garanția piesei rămâne la furnizor. Garanția pentru lucrarea noastră se păstrează dacă piesa corespunde specificației și nu are defecte vizibile."
   },
   {
-    question: "Вы согласуете цену до ремонта?",
+    question: "Confirmați prețul înainte de reparație?",
     answer:
-      "Да. После диагностики вы получаете смету с работами, деталями и сроками. Мы начинаем ремонт только после вашего подтверждения."
+      "Da. După diagnosticare primești devizul cu lucrări, piese și termeni. Începem doar după confirmarea ta."
   },
   {
-    question: "Есть ли гарантия на ремонт?",
+    question: "Oferiți garanție pentru reparații?",
     answer:
-      "Да, гарантия на работы и установленные детали действует до 24 месяцев. Условия фиксируются в заказ-наряде."
+      "Da, garanția pentru lucrări și piesele montate este de până la 24 de luni. Condițiile sunt indicate în actele de service."
   },
   {
-    question: "Работаете ли вы с премиальными марками?",
+    question: "Lucrați cu mărci premium?",
     answer:
-      "Да. Мы обслуживаем BMW, Mercedes-Benz, Audi, Lexus, Porsche, Volvo и другие марки, включая автомобили с современной электроникой."
+      "Da. Deservim BMW, Mercedes-Benz, Audi, Lexus, Porsche, Volvo și alte mărci, inclusiv automobile cu electronică modernă."
   },
   {
-    question: "Можно ли оставить автомобиль на день?",
+    question: "Pot lăsa automobilul pentru o zi?",
     answer:
-      "Да. Автомобиль хранится в закрытой сервисной зоне. По готовности мы сообщим статус и согласуем удобное время выдачи."
+      "Da. Automobilul rămâne într-o zonă de service închisă. Când este gata, te anunțăm și stabilim ora de predare."
   },
   {
-    question: "Делаете ли вы срочный ремонт?",
+    question: "Faceți reparații urgente?",
     answer:
-      "Если есть свободное окно и необходимые запчасти, берем срочные работы в тот же день. Лучше позвонить заранее, чтобы закрепить время."
+      "Dacă avem fereastră liberă și piesele necesare, putem prelua lucrări urgente în aceeași zi. Cel mai bine este să suni în avans."
   },
   {
-    question: "Как понять, что ремонт действительно нужен?",
+    question: "Cum înțeleg că reparația este într-adevăr necesară?",
     answer:
-      "Мы показываем результаты диагностики, фото или видео изношенных узлов и объясняем риски. Вы сами выбираете, что делать сейчас, а что можно запланировать."
+      "Îți arătăm rezultatele diagnosticului, foto sau video cu piesele uzate și explicăm riscurile. Tu alegi ce faci acum și ce poți planifica."
   }
 ];
 
@@ -59,8 +59,8 @@ export default function FAQ() {
         <Reveal>
           <SectionHeading
             eyebrow="FAQ"
-            title="Часто задаваемые вопросы"
-            text="Собрали ответы на вопросы, которые чаще всего возникают перед первым визитом в сервис."
+            title="Întrebări frecvente"
+            text="Am adunat răspunsurile care apar cel mai des înainte de prima vizită la service."
             align="center"
           />
         </Reveal>

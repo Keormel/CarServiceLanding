@@ -1,23 +1,23 @@
 export const siteConfig = {
-  name: "Apex Motors",
+  name: "Aleks-Blitz",
   description:
-    "Премиальный автосервис в Москве: диагностика, ремонт двигателя, подвески, тормозов, электрики и плановое обслуживание с гарантией.",
-  url: "https://apex-motors.ru",
-  phone: "+7 (495) 128-44-88",
-  phoneHref: "tel:+74951284488",
+    "Service auto premium în Chișinău: diagnosticare, reparații motor, suspensie, frâne, electrică auto și mentenanță cu garanție.",
+  url: "https://aleks-blitz.md",
+  phone: "+373 60 123 456",
+  phoneHref: "tel:+37360123456",
   whatsappHref:
-    "https://wa.me/74951284488?text=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20Apex%20Motors",
-  email: "service@apex-motors.ru",
-  address: "Москва, ул. Автозаводская, 23А",
-  workingHours: "Пн-Сб 09:00-21:00, Вс 10:00-18:00",
-  mapQuery: "Москва, улица Автозаводская, 23А"
+    "https://wa.me/37360123456?text=Salut%2C%20vreau%20o%20programare%20la%20Aleks-Blitz",
+  email: "service@aleks-blitz.md",
+  address: "Chișinău, str. Uzinelor 12",
+  workingHours: "Luni-Sâmbătă 09:00-20:00, Duminică 10:00-16:00",
+  mapQuery: "Chișinău, strada Uzinelor 12"
 };
 
 export const navLinks = [
-  { href: "#services", label: "Услуги" },
-  { href: "#process", label: "Процесс" },
-  { href: "#gallery", label: "Галерея" },
-  { href: "#reviews", label: "Отзывы" },
+  { href: "#services", label: "Servicii" },
+  { href: "#process", label: "Proces" },
+  { href: "#gallery", label: "Galerie" },
+  { href: "#reviews", label: "Recenzii" },
   { href: "#faq", label: "FAQ" },
-  { href: "#contact", label: "Контакты" }
+  { href: "#contact", label: "Contacte" }
 ];

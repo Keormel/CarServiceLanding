@@ -11,12 +11,12 @@ export default function Footer() {
           <div>
             <Logo />
             <p className="mt-4 max-w-sm text-sm leading-6 text-white/[0.54]">
-              Премиальный автосервис с прозрачной диагностикой, гарантией и уважением
-              к вашему времени.
+              Service auto premium cu diagnosticare transparentă, garanție și respect
+              pentru timpul tău.
             </p>
           </div>
 
-          <nav className="grid grid-cols-2 gap-3 sm:grid-cols-3" aria-label="Меню в футере">
+          <nav className="grid grid-cols-2 gap-3 sm:grid-cols-3" aria-label="Meniu footer">
             {navLinks.map((item) => (
               <a
                 key={item.href}
@@ -41,8 +41,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Apex Motors. Все права защищены.</p>
-          <p>Политика качества и гарантийные условия доступны в сервисе.</p>
+          <p>© {year} Aleks-Blitz. Toate drepturile rezervate.</p>
+          <p>Condițiile de garanție sunt disponibile în service.</p>
         </div>
       </div>
     </footer>

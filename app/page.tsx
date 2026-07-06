@@ -33,9 +33,9 @@ const jsonLd = {
     "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1600&q=82",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "ул. Автозаводская, 23А",
-    addressLocality: "Москва",
-    addressCountry: "RU"
+    streetAddress: "str. Uzinelor 12",
+    addressLocality: "Chișinău",
+    addressCountry: "MD"
   },
   openingHoursSpecification: [
     {
@@ -51,7 +51,7 @@ const jsonLd = {
       closes: "18:00"
     }
   ],
-  priceRange: "₽₽",
+  priceRange: "MDL",
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",

@@ -12,42 +12,42 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Apex Motors — премиальный автосервис в Москве",
-    template: "%s | Apex Motors"
+    default: "Aleks-Blitz — service auto premium în Chișinău",
+    template: "%s | Aleks-Blitz"
   },
   description: siteConfig.description,
   keywords: [
-    "автосервис Москва",
-    "ремонт автомобиля",
-    "диагностика авто",
-    "замена масла",
-    "ремонт двигателя",
-    "премиальная автомастерская"
+    "service auto Chișinău",
+    "reparații auto Moldova",
+    "diagnosticare auto",
+    "schimb ulei",
+    "reparații motor",
+    "autoservice premium"
   ],
-  authors: [{ name: "Apex Motors" }],
-  creator: "Apex Motors",
+  authors: [{ name: "Aleks-Blitz" }],
+  creator: "Aleks-Blitz",
   alternates: {
     canonical: "/"
   },
   openGraph: {
     type: "website",
-    locale: "ru_RU",
+    locale: "ro_MD",
     url: "/",
     siteName: siteConfig.name,
-    title: "Apex Motors — премиальный автосервис в Москве",
+    title: "Aleks-Blitz — service auto premium în Chișinău",
     description: siteConfig.description,
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Apex Motors — премиальный автосервис"
+        alt: "Aleks-Blitz — service auto premium"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Apex Motors — премиальный автосервис в Москве",
+    title: "Aleks-Blitz — service auto premium în Chișinău",
     description: siteConfig.description,
     images: ["/opengraph-image"]
   },
@@ -81,7 +81,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={inter.variable}>
+    <html lang="ro-MD" className={inter.variable}>
       <body>{children}</body>
     </html>
   );

@@ -21,33 +21,33 @@ interface Advantage {
 const advantages: Advantage[] = [
   {
     icon: Award,
-    title: "Более 10 лет опыта",
-    text: "Работаем с немецкими, японскими, корейскими и премиальными марками."
+    title: "Peste 10 ani experiență",
+    text: "Lucrăm cu mărci germane, japoneze, coreene și premium."
   },
   {
     icon: BadgeCheck,
-    title: "Сертифицированные мастера",
-    text: "Команда проходит обучение по современным системам и регламентам."
+    title: "Mecanici certificați",
+    text: "Echipa se instruiește constant pe sisteme și proceduri moderne."
   },
   {
     icon: Wrench,
-    title: "Современное оборудование",
-    text: "Дилерские сканеры, подъемники, стенды и профессиональный инструмент."
+    title: "Echipamente moderne",
+    text: "Scannere profesionale, elevatoare, standuri și instrumente specializate."
   },
   {
     icon: PackageCheck,
-    title: "Оригинальные запчасти",
-    text: "Подбираем OEM, оригинал или надежный аналог под ваш бюджет."
+    title: "Piese originale",
+    text: "Selectăm OEM, original sau analog verificat în funcție de buget."
   },
   {
     icon: ShieldCheck,
-    title: "Гарантия на работы",
-    text: "Письменная гарантия до 24 месяцев с прозрачными условиями."
+    title: "Garanție la lucrări",
+    text: "Garanție scrisă până la 24 de luni, cu condiții clare."
   },
   {
     icon: CircleDollarSign,
-    title: "Честные цены",
-    text: "Без навязанных услуг: только то, что реально влияет на ресурс и безопасность."
+    title: "Prețuri corecte",
+    text: "Fără servicii impuse: doar lucrări care influențează siguranța și resursa."
   }
 ];
 
@@ -57,9 +57,9 @@ export default function WhyUs() {
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="Почему выбирают нас"
-            title="Сервис без сюрпризов в смете и качестве"
-            text="Мы объясняем проблему человеческим языком, показываем изношенные детали и сохраняем историю обслуживания автомобиля."
+            eyebrow="De ce ne aleg"
+            title="Service fără surprize în deviz sau calitate"
+            text="Explicăm problema pe înțelesul tău, arătăm piesele uzate și păstrăm istoricul de service al automobilului."
             align="center"
           />
         </Reveal>

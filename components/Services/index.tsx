@@ -24,51 +24,51 @@ interface Service {
 const services: Service[] = [
   {
     icon: ScanLine,
-    title: "Диагностика",
+    title: "Diagnosticare",
     description:
-      "Компьютерная проверка, осмотр ходовой и понятный отчет с приоритетами ремонта."
+      "Verificare computerizată, inspecție mecanică și raport clar cu priorități."
   },
   {
     icon: Droplets,
-    title: "Замена масла",
+    title: "Schimb ulei",
     description:
-      "Подбор допуска, фильтры премиум-класса и сброс сервисных интервалов."
+      "Ulei conform specificației, filtre premium și resetarea intervalelor de service."
   },
   {
     icon: Disc3,
-    title: "Тормозная система",
+    title: "Sistem de frânare",
     description:
-      "Колодки, диски, суппорты, тормозная жидкость и проверка эффективности."
+      "Plăcuțe, discuri, etriere, lichid de frână și test de eficiență."
   },
   {
     icon: Wrench,
-    title: "Подвеска",
+    title: "Suspensie",
     description:
-      "Диагностика стуков, замена рычагов, амортизаторов, сайлентблоков и стоек."
+      "Diagnosticarea zgomotelor, înlocuire brațe, amortizoare, bucșe și bielete."
   },
   {
     icon: Cable,
-    title: "Электрика",
+    title: "Electrică auto",
     description:
-      "Поиск утечек тока, ошибки блоков, датчики, проводка и сложная автоэлектроника."
+      "Consum parazitar, erori module, senzori, cablaj și electronică auto complexă."
   },
   {
     icon: Gauge,
-    title: "Двигатель",
+    title: "Motor",
     description:
-      "От профилактики до капитального ремонта с замером компрессии и эндоскопией."
+      "De la mentenanță preventivă până la reparații majore cu test compresie."
   },
   {
     icon: Settings,
-    title: "Коробка передач",
+    title: "Cutie de viteze",
     description:
-      "Обслуживание АКПП, DSG, вариаторов, адаптация и устранение рывков."
+      "Service pentru automată, DSG, CVT, adaptări și eliminarea smuciturilor."
   },
   {
     icon: Car,
-    title: "Шиномонтаж",
+    title: "Anvelope",
     description:
-      "Сезонная смена, балансировка, ремонт проколов и хранение колес."
+      "Schimb sezonier, echilibrare, reparare pene și depozitare roți."
   }
 ];
 
@@ -78,9 +78,9 @@ export default function Services() {
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="Наши услуги"
-            title="Закрываем весь цикл обслуживания автомобиля"
-            text="От точной диагностики до сложного ремонта агрегатов. Каждая работа фиксируется в заказ-наряде, а смета согласуется до старта."
+            eyebrow="Serviciile noastre"
+            title="Acoperim întregul ciclu de întreținere auto"
+            text="De la diagnosticare precisă până la reparații complexe. Fiecare lucrare este documentată, iar devizul este confirmat înainte de start."
           />
         </Reveal>
 
@@ -100,9 +100,9 @@ export default function Services() {
                   <a
                     href="#booking"
                     className="focus-ring mt-5 inline-flex items-center gap-2 rounded-lg py-2 text-sm font-bold text-white transition hover:text-signal"
-                    aria-label={`Подробнее: ${service.title}`}
+                    aria-label={`Detalii: ${service.title}`}
                   >
-                    Подробнее
+                    Detalii
                     <ChevronRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </article>

@@ -35,12 +35,12 @@ export default function Header() {
           : "border-white/5 bg-carbon/[0.35] backdrop-blur-md"
       )}
     >
-      <div className="container-px flex h-20 items-center justify-between gap-5">
-        <a href="#top" aria-label="Apex Motors на главную" className="focus-ring rounded-lg">
+      <div className="container-px flex h-16 items-center justify-between gap-5 md:h-20">
+        <a href="#top" aria-label="Aleks-Blitz pagina principală" className="focus-ring rounded-lg">
           <Logo />
         </a>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Основное меню">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Meniu principal">
           {navLinks.map((item) => (
             <a
               key={item.href}
@@ -57,23 +57,23 @@ export default function Header() {
             href="#booking"
             variant="secondary"
             size="sm"
-            aria-label="Записаться на ремонт"
+            aria-label="Programează-te la service"
           >
-            Записаться
+            Programare
           </ButtonLink>
           <ButtonLink
             href={siteConfig.phoneHref}
             size="sm"
             icon={<Phone className="h-4 w-4" aria-hidden="true" />}
-            aria-label={`Позвонить ${siteConfig.phone}`}
+            aria-label={`Sună la ${siteConfig.phone}`}
           >
-            Позвонить
+            Sună
           </ButtonLink>
         </div>
 
         <button
           type="button"
-          aria-label={open ? "Закрыть меню" : "Открыть меню"}
+          aria-label={open ? "Închide meniul" : "Deschide meniul"}
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((value) => !value)}
@@ -97,7 +97,7 @@ export default function Header() {
             transition={{ duration: 0.22 }}
             className="border-t border-white/10 bg-carbon/[0.96] px-4 pb-5 pt-4 shadow-panel backdrop-blur-xl lg:hidden"
           >
-            <nav className="mx-auto flex max-w-7xl flex-col gap-1" aria-label="Мобильное меню">
+            <nav className="mx-auto flex max-w-7xl flex-col gap-1" aria-label="Meniu mobil">
               {navLinks.map((item) => (
                 <a
                   key={item.href}
@@ -110,14 +110,14 @@ export default function Header() {
               ))}
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 <ButtonLink href="#booking" onClick={() => setOpen(false)}>
-                  Записаться
+                  Programare
                 </ButtonLink>
                 <ButtonLink
                   href={siteConfig.phoneHref}
                   variant="secondary"
                   icon={<Phone className="h-4 w-4" aria-hidden="true" />}
                 >
-                  Позвонить
+                  Sună
                 </ButtonLink>
               </div>
             </nav>

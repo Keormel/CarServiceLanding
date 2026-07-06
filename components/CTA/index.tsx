@@ -11,7 +11,7 @@ export default function CTA() {
     <section className="relative isolate overflow-hidden border-b border-white/10 py-16 sm:py-20">
       <Image
         src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=2200&q=84"
-        alt="Автомобиль после обслуживания в премиальном сервисе"
+        alt="Automobil după întreținere într-un service premium"
         fill
         sizes="100vw"
         className="absolute inset-0 -z-20 object-cover"
@@ -21,29 +21,31 @@ export default function CTA() {
       <div className="container-px">
         <Reveal>
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase text-signal">Готовы помочь сегодня</p>
+            <p className="text-sm font-bold uppercase text-signal">Te putem ajuta azi</p>
             <h2 className="mt-3 text-balance text-3xl font-black text-white sm:text-4xl lg:text-5xl">
-              Запишитесь на ремонт уже сегодня
+              Programează reparația chiar astăzi
             </h2>
             <p className="mt-5 text-lg leading-8 text-white/[0.72]">
-              Оставьте заявку или позвоните. Мы подберем окно, подготовим мастера и
-              начнем с честной диагностики без лишних работ.
+              Lasă o solicitare sau sună. Alegem o fereastră comodă, pregătim
+              mecanicul și începem cu diagnosticare sinceră, fără lucrări inutile.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink
                 href={siteConfig.phoneHref}
                 size="lg"
+                className="w-full sm:w-auto"
                 icon={<Phone className="h-5 w-5" aria-hidden="true" />}
               >
-                Позвонить
+                Sună
               </ButtonLink>
               <ButtonLink
                 href="#booking"
                 size="lg"
                 variant="secondary"
+                className="w-full sm:w-auto"
                 icon={<CalendarCheck className="h-5 w-5" aria-hidden="true" />}
               >
-                Оставить заявку
+                Lasă solicitare
               </ButtonLink>
             </div>
           </div>

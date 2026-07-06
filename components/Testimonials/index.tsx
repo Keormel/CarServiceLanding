@@ -9,25 +9,25 @@ import SectionHeading from "@/components/UI/SectionHeading";
 
 const reviews = [
   {
-    name: "Илья Романов",
+    name: "Andrei Ceban",
     car: "Audi A6",
     photo:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=80",
-    text: "Приехал с вибрацией и ошибкой по двигателю. За час нашли причину, показали видео с эндоскопа и согласовали ремонт без давления. Машина снова едет как должна."
+    text: "Am venit cu vibrații și o eroare la motor. Într-o oră au găsit cauza, mi-au arătat video de la endoscop și am confirmat reparația fără presiune."
   },
   {
-    name: "Марина Соколова",
+    name: "Elena Rusu",
     car: "Mercedes-Benz GLC",
     photo:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80",
-    text: "Очень чистый сервис и понятное общение. Мне заранее объяснили стоимость, сроки и варианты запчастей. Отдельно понравилось, что после ремонта прислали фотоотчет."
+    text: "Service foarte curat și comunicare clară. Mi-au explicat costul, termenii și variantele de piese din timp. După reparație am primit și raport foto."
   },
   {
-    name: "Дмитрий Лебедев",
+    name: "Victor Munteanu",
     car: "Toyota Camry",
     photo:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=240&q=80",
-    text: "Делал подвеску и тормоза. Без лишних работ, все старые детали показали. Через неделю позвонили и уточнили, все ли в порядке. Такой подход редко встречается."
+    text: "Am făcut suspensia și frânele. Fără lucrări inutile, piesele vechi au fost arătate. După o săptămână m-au sunat să verifice dacă totul e în regulă."
   }
 ];
 
@@ -49,9 +49,9 @@ export default function Testimonials() {
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="Отзывы клиентов"
-            title="Нас рекомендуют после первого визита"
-            text="Клиенты ценят точность диагностики, аккуратность работ и то, что мы не прячем процесс ремонта за закрытой дверью."
+            eyebrow="Recenzii"
+            title="Clienții ne recomandă după prima vizită"
+            text="Oamenii apreciază diagnosticul precis, lucrările curate și faptul că nu ascundem procesul de reparație."
             align="center"
           />
         </Reveal>
@@ -65,7 +65,7 @@ export default function Testimonials() {
               <div className="flex gap-2">
                 <button
                   type="button"
-                  aria-label="Предыдущий отзыв"
+                  aria-label="Recenzia precedentă"
                   onClick={() =>
                     setActive((current) =>
                       current === 0 ? reviews.length - 1 : current - 1
@@ -77,7 +77,7 @@ export default function Testimonials() {
                 </button>
                 <button
                   type="button"
-                  aria-label="Следующий отзыв"
+                  aria-label="Recenzia următoare"
                   onClick={() => setActive((current) => (current + 1) % reviews.length)}
                   className="focus-ring grid h-11 w-11 place-items-center rounded-lg border border-white/10 bg-white/5 text-white transition hover:border-signal hover:bg-signal"
                 >
@@ -99,7 +99,7 @@ export default function Testimonials() {
                   <div className="relative h-20 w-20 overflow-hidden rounded-lg border border-white/10 bg-white/5">
                     <Image
                       src={currentReview.photo}
-                      alt={`Фото клиента ${currentReview.name}`}
+                      alt={`Fotografia clientului ${currentReview.name}`}
                       fill
                       sizes="80px"
                       className="object-cover"
@@ -112,7 +112,7 @@ export default function Testimonials() {
                     <p className="mt-1 text-sm font-semibold text-white/[0.52]">
                       {currentReview.car}
                     </p>
-                    <div className="mt-3 flex gap-1 text-amber-300" aria-label="5 из 5">
+                    <div className="mt-3 flex gap-1 text-amber-300" aria-label="5 din 5">
                       {Array.from({ length: 5 }).map((_, index) => (
                         <Star
                           key={index}
@@ -134,7 +134,7 @@ export default function Testimonials() {
                 <button
                   key={review.name}
                   type="button"
-                  aria-label={`Показать отзыв ${index + 1}`}
+                  aria-label={`Afișează recenzia ${index + 1}`}
                   onClick={() => setActive(index)}
                   className={`h-2 rounded-full transition ${
                     index === active ? "w-8 bg-signal" : "w-2 bg-white/[0.22]"

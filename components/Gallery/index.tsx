@@ -6,33 +6,33 @@ import SkeletonImage from "@/components/UI/SkeletonImage";
 
 const photos = [
   {
-    title: "Цех диагностики",
-    alt: "Чистая зона диагностики автомобиля",
+    title: "Zona de diagnosticare",
+    alt: "Zonă curată pentru diagnosticarea automobilului",
     src: "https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=82"
   },
   {
-    title: "Процесс ремонта",
-    alt: "Мастер выполняет ремонт автомобиля",
+    title: "Procesul de reparație",
+    alt: "Mecanic care repară un automobil",
     src: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=82"
   },
   {
-    title: "Профессиональный инструмент",
-    alt: "Набор инструмента в автомастерской",
+    title: "Instrumente profesionale",
+    alt: "Set de instrumente într-un service auto",
     src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=82"
   },
   {
-    title: "Премиальные автомобили",
-    alt: "Современный автомобиль в сервисной зоне",
+    title: "Automobile premium",
+    alt: "Automobil modern în zona de service",
     src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=82"
   },
   {
-    title: "Сервисная зона",
-    alt: "Подъемник и оборудование автосервиса",
+    title: "Zona de service",
+    alt: "Elevator și echipamente pentru service auto",
     src: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?auto=format&fit=crop&w=1200&q=82"
   },
   {
-    title: "Финальная проверка",
-    alt: "Автомобиль после обслуживания",
+    title: "Verificare finală",
+    alt: "Automobil după întreținere",
     src: "https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=1200&q=82"
   }
 ];
@@ -43,9 +43,9 @@ export default function Gallery() {
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="Галерея"
-            title="Чистая мастерская, точный инструмент и автомобили в надежных руках"
-            text="Рабочие зоны организованы так, чтобы ускорить обслуживание и исключить случайные повреждения."
+            eyebrow="Galerie"
+            title="Atelier curat, instrumente precise și mașini în mâini sigure"
+            text="Zonele de lucru sunt organizate pentru intervenții rapide și protecția automobilului."
             align="center"
           />
         </Reveal>

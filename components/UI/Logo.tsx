@@ -12,7 +12,7 @@ export default function Logo({
   textClassName
 }: LogoProps) {
   return (
-    <div className={cn("flex items-center gap-3", className)} aria-label="Apex Motors">
+    <div className={cn("flex items-center gap-3", className)} aria-label="Aleks-Blitz">
       <svg
         className={cn("h-10 w-10 shrink-0", markClassName)}
         viewBox="0 0 48 48"
@@ -36,8 +36,8 @@ export default function Logo({
         <path d="M17.2 20.4h13.6l1.4 4H15.8l1.4-4Z" fill="#0B0B0B" />
       </svg>
       <div className={cn("leading-none", textClassName)}>
-        <span className="block text-lg font-black text-white">Apex</span>
-        <span className="block text-xs font-semibold text-steel">Motors</span>
+        <span className="block text-lg font-black text-white">Aleks</span>
+        <span className="block text-xs font-semibold text-steel">Blitz</span>
       </div>
     </div>
   );

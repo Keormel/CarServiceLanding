@@ -14,23 +14,23 @@ interface ProcessStep {
 const steps: ProcessStep[] = [
   {
     icon: CalendarCheck,
-    title: "Оставьте заявку",
-    text: "Выберите удобное время, услугу и расскажите, что беспокоит в автомобиле."
+    title: "Trimite solicitarea",
+    text: "Alege ora potrivită, serviciul și descrie ce se întâmplă cu mașina."
   },
   {
     icon: ClipboardCheck,
-    title: "Диагностика автомобиля",
-    text: "Проверяем систему, показываем факты и разделяем срочное от планового."
+    title: "Diagnosticarea automobilului",
+    text: "Verificăm sistemele, prezentăm datele și separăm urgentul de planificat."
   },
   {
     icon: FileText,
-    title: "Согласование стоимости",
-    text: "Фиксируем смету, сроки, список деталей и начинаем только после вашего согласия."
+    title: "Confirmarea costului",
+    text: "Fixăm devizul, termenii, lista pieselor și începem doar după acordul tău."
   },
   {
     icon: KeyRound,
-    title: "Ремонт и выдача автомобиля",
-    text: "Проводим финальную проверку, даем рекомендации и гарантийные документы."
+    title: "Reparație și predare",
+    text: "Facem verificarea finală, oferim recomandări și documentele de garanție."
   }
 ];
 
@@ -40,9 +40,9 @@ export default function Process() {
       <div className="container-px">
         <Reveal>
           <SectionHeading
-            eyebrow="Как мы работаем"
-            title="Понятный процесс с контролем на каждом этапе"
-            text="Вы видите, за что платите, и принимаете решения на основе диагностики, а не догадок."
+            eyebrow="Cum lucrăm"
+            title="Proces clar, cu control la fiecare etapă"
+            text="Vezi exact pentru ce plătești și iei decizii pe baza diagnosticului, nu a presupunerilor."
           />
         </Reveal>
 

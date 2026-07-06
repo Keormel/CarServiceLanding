@@ -7,7 +7,7 @@ export default function Loader() {
           <div className="absolute inset-2 animate-spin rounded-lg border-2 border-transparent border-t-signal" />
           <div className="absolute inset-5 rounded bg-signal" />
         </div>
-        <p className="text-sm font-semibold text-white/70">Загружаем сервис</p>
+        <p className="text-sm font-semibold text-white/70">Încărcăm service-ul</p>
       </div>
     </div>
   );

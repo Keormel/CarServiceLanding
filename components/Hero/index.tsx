@@ -7,9 +7,9 @@ import { ButtonLink } from "@/components/UI/Button";
 import { siteConfig } from "@/lib/site";
 
 const stats = [
-  { value: "10+", label: "лет опыта" },
-  { value: "4.9", label: "средняя оценка" },
-  { value: "24 мес.", label: "гарантия" }
+  { value: "10+", label: "ani experiență" },
+  { value: "4.9", label: "rating mediu" },
+  { value: "24 luni", label: "garanție" }
 ];
 
 export default function Hero() {
@@ -17,11 +17,11 @@ export default function Hero() {
     <section
       id="top"
       aria-labelledby="hero-title"
-      className="relative isolate min-h-[88svh] overflow-hidden border-b border-white/10 pt-28"
+      className="relative isolate min-h-[88svh] overflow-hidden border-b border-white/10 pt-24 md:pt-28"
     >
       <Image
         src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=2400&q=86"
-        alt="Современная автомастерская с автомобилем на подъемнике"
+        alt="Atelier auto modern cu automobil pe elevator"
         fill
         priority
         sizes="100vw"
@@ -39,39 +39,42 @@ export default function Hero() {
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-lg border border-white/[0.12] bg-white/[0.08] px-3 py-2 text-sm font-semibold text-white/[0.78] backdrop-blur-lg">
             <Sparkles className="h-4 w-4 text-signal" aria-hidden="true" />
-            Премиальный сервис для автомобилей любого класса
+            Service premium pentru automobile de orice clasă
           </div>
 
           <h1
             id="hero-title"
-            className="text-balance text-4xl font-black leading-[1.05] text-white sm:text-5xl lg:text-7xl"
+            className="text-balance text-3xl font-black leading-[1.05] text-white sm:text-5xl lg:text-7xl"
           >
-            Автосервис, где ремонт проходит точно, быстро и прозрачно
+            Service auto unde reparația este rapidă, corectă și transparentă
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/[0.72] sm:text-xl">
-            Диагностика за 40 минут, согласованная смета до начала работ и гарантия
-            до 24 месяцев. Сохраним динамику, безопасность и стоимость вашего авто.
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/[0.72] sm:text-xl">
+            Diagnosticare în 40 de minute, deviz confirmat înainte de lucrări și
+            garanție până la 24 de luni. Păstrăm siguranța, dinamica și valoarea
+            mașinii tale.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ButtonLink
               href="#booking"
               size="lg"
+              className="w-full sm:w-auto"
               icon={<CalendarCheck className="h-5 w-5" aria-hidden="true" />}
             >
-              Записаться
+              Programează-te
             </ButtonLink>
             <ButtonLink
               href={siteConfig.phoneHref}
               size="lg"
               variant="secondary"
+              className="w-full sm:w-auto"
               icon={<Phone className="h-5 w-5" aria-hidden="true" />}
             >
-              Позвонить
+              Sună acum
             </ButtonLink>
           </div>
 
-          <div className="mt-10 grid max-w-2xl grid-cols-3 gap-3">
+          <div className="mt-10 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
             {stats.map((item) => (
               <div
                 key={item.label}
@@ -101,8 +104,8 @@ export default function Hero() {
                 <Gauge className="h-5 w-5" />
               </div>
               <div>
-                <p className="font-bold text-white">Диагностика 360°</p>
-                <p className="text-sm text-white/[0.58]">Сканер, тест-драйв, подъемник</p>
+                <p className="font-bold text-white">Diagnosticare 360°</p>
+                <p className="text-sm text-white/[0.58]">Scanner, test drive, elevator</p>
               </div>
             </div>
           </motion.div>
@@ -117,8 +120,8 @@ export default function Hero() {
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <div>
-                <p className="font-bold text-white">Гарантия до 24 месяцев</p>
-                <p className="text-sm text-white/[0.58]">На работы и установленные детали</p>
+                <p className="font-bold text-white">Garanție până la 24 luni</p>
+                <p className="text-sm text-white/[0.58]">Pentru lucrări și piese montate</p>
               </div>
             </div>
           </motion.div>
